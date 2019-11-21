@@ -1,43 +1,27 @@
-import React, {Component} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Home_Section from './components/Home_section.jsx/Home_section'
-import { format } from 'path';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: '2019-10-20',
-      mount: true,
-    }
-    this.handleChange = this.handleChange.bind(this);
-  }
+const App = () => {
+  const [date, setDate] = useState('2019-10-20');
+  const [dateInput, handleDate] = useState('2019-10-20')
+  console.log(date, dateInput)
+  
 
-  getDate = (e) => {
+  const getDate = (e) => {
    e.preventDefault();
-   this.setState({mount:false})
+   setDate(dateInput)
   }
 
-  handleChange(event) {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  }
-
-  render() {
-    console.log(this.state)
-    return (
-      <div>
-        <form onSubmit={this.getDate}>
-          <input type="text" name="date" placeholder="YYYY-MM-DD" value={this.state.date} onChange={(e) => this.handleChange(e)
-          }/>
-          <button type="submit">Search</button>
-        </form>
-        <Home_Section date={this.state.date}/>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <form onSubmit={getDate}>
+        <input type="text" name="date" placeholder="YYYY-MM-DD" value={dateInput} onChange={(e) => handleDate(e.target.value)}/>
+        <button type="submit">Search</button>
+      </form>
+      <Home_Section date={date}/>
+    </div>
+  )
 }
 
 export default App;
