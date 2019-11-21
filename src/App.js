@@ -15,7 +15,8 @@ const App = () => {
 
   return (
     <div>
-      <form onSubmit={getDate}>
+      <h1 className="title">Discover the photo of the day</h1>
+      <form className="form" onSubmit={getDate}>
         <input type="text" name="date" placeholder="YYYY-MM-DD" value={dateInput} onChange={(e) => handleDate(e.target.value)}/>
         <button type="submit">Search</button>
       </form>

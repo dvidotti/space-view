@@ -7,3 +7,27 @@
   width: 100vw;
   height:auto;
 }
+
+.photo-text, .title{
+  padding:1em;
+  font-size:1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+ padding:0.3em 1em;
+ font-size:2em;
+}
+
+.form {
+  padding:0.3em 1em;
+  width: auto;
+}
+
+.form >input, button {
+  width:200px;
+  padding: .5em;
+  font-size: 2em;
+  margin-left:1em;
+}
+
